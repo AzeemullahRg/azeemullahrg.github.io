@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telegram WebApp Test</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize Telegram Web App
+            window.Telegram.WebApp.ready();
+
+            // Send data to your server
+            function sendData() {
+                const data = {
+                    user: window.Telegram.WebApp.initDataUnsafe.user,
+                    query: 'Sample query data'
+                };
+
+                fetch('https://yourserver.com/api/your-endpoint', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+                .then(response => response.json())
+                .then(data => console.log('Success:', data))
+                .catch((error) => console.error('Error:', error));
+            }
+
+            // Call sendData() when appropriate (e.g., on button click)
+            document.getElementById('sendButton').addEventListener('click', sendData);
+        });
+    </script>
+</head>
+<body>
+    <button id="sendButton">Send Data</button>
+</body>
+</html>
