@@ -22,21 +22,15 @@
 
             // Send data to your server
             function sendData() {
-                const data = {
-                    user: window.Telegram.WebApp.initDataUnsafe.user,
-                    query: 'Sample query data'
-                };
+                // Sending data to the bot
+                window.Telegram.WebApp.sendData(initData);
 
-                fetch('https://yourserver.com/api/your-endpoint', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(data)
-                })
-                .then(response => response.json())
-                .then(data => console.log('Success:', data))
-                .catch((error) => console.error('Error:', error));
+                // You can set a custom function to receive data from the bot
+                window.Telegram.WebApp.onEvent('data', (data) => {
+                    const responseDiv = document.getElementById('responseData');
+                    responseDiv.textContent = `Received data: ${data}`;
+                });
+
             }
 
             // Call sendData() when appropriate (e.g., on button click)
@@ -47,5 +41,6 @@
 <body>
     <div id="initData">Loading initialization data...</div>
     <button id="sendButton">Send Data To Bot</button>
+    <div id="responseData">Waiting for JWT Token...</div>
 </body>
 </html>
