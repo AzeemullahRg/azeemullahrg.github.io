@@ -8,9 +8,17 @@
             // Initialize Telegram Web App
             window.Telegram.WebApp.ready();
 
-            // Print initialization data to console
+               
+            // Get the initialization data
             const initData = window.Telegram.WebApp.initDataUnsafe;
-            console.log("Initialization Data:", initData);
+            
+            // Display initialization data in the div
+            const dataDiv = document.getElementById('initData');
+            if (initData) {
+                dataDiv.textContent = `Initialization Data: ${JSON.stringify(initData, null, 2)}`;
+            } else {
+                dataDiv.textContent = 'Initialization Data is not available.';
+            }
 
             // Send data to your server
             function sendData() {
@@ -37,6 +45,7 @@
     </script>
 </head>
 <body>
+    <div id="initData">Loading initialization data...</div>
     <button id="sendButton">Send Data</button>
 </body>
 </html>
