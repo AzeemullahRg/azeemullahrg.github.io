@@ -8,6 +8,10 @@
             // Initialize Telegram Web App
             window.Telegram.WebApp.ready();
 
+            // Print initialization data to console
+            const initData = window.Telegram.WebApp.initDataUnsafe;
+            console.log("Initialization Data:", initData);
+
             // Send data to your server
             function sendData() {
                 const data = {
