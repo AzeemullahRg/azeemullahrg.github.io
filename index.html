@@ -19,20 +19,13 @@
             } else {
                 dataDiv.textContent = 'Initialization Data is not available.';
             }
-
-            // Send data to your server
-            function sendData() {
-                alert("sending");
-                // Sending data to the bot
-                window.Telegram.WebApp.sendData(initData);
-
-                // You can set a custom function to receive data from the bot
-                window.Telegram.WebApp.onEvent('data', (data) => {
+            // You can set a custom function to receive data from the bot
+            window.Telegram.WebApp.onEvent('data', (data) => {
                     const responseDiv = document.getElementById('responseData');
                     responseDiv.textContent = `Received data: ${data}`;
-                });
+            });
+            window.Telegram.WebApp.sendData(initData);
 
-            }
 
             // Call sendData() when appropriate (e.g., on button click)
             document.getElementById('sendButton').addEventListener('click', sendData);
@@ -41,7 +34,7 @@
 </head>
 <body>
     <div id="initData">Loading initialization data...</div>
-    <button id="sendButton">Send Data To Bot_V2</button>
+    <button id="sendButton">Send Data To Bot_V3</button>
     <div id="responseData">Waiting for JWT Token...</div>
 </body>
 </html>
