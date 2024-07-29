@@ -17,7 +17,8 @@
             const responseDiv = document.getElementById('responseData');
 
             if (initData) {
-                dataDiv.textContent = `Initialization Data: ${JSON.stringify(initData, null, 2)}`;
+                //dataDiv.textContent = `Initialization Data: ${JSON.stringify(initData, null, 2)}`;
+                dataDiv.textContent = initData;
                             // You can set a custom function to receive data from the bot
                 window.Telegram.WebApp.onEvent('data', (data) => {
                         responseDiv.textContent = `Received data: ${data}`;
