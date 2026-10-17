@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gapsy: Color Slide Puzzle</title>
+<meta name="description" content="Gapsy is a free, cozy color slide puzzle for Android. Slide a tile into the gap, match 3 colors, clear the board.">
+<meta property="og:title" content="Gapsy: Color Slide Puzzle">
+<meta property="og:description" content="A free, cozy color slide puzzle for Android.">
+<meta property="og:image" content="https://azeemullahrg.github.io/color-slide/icon.png">
+<link rel="icon" href="icon.png">
+<style>
+:root{--bg:#f6f0ff;--card:#fff;--ink:#2a2140;--muted:#6b6385;--accent:#6b3fd6}
+@media (prefers-color-scheme:dark){:root{--bg:#1b1630;--card:#262042;--ink:#f3eeff;--muted:#b4abd0;--accent:#b79bff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:880px;margin:0 auto;padding:40px 16px 24px;display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:center}
+.icon{width:96px;height:96px;border-radius:22px;box-shadow:0 6px 20px rgba(60,30,120,.25)}
+h1{font-size:2.4rem;line-height:1.1;margin:18px 0 6px}
+.tag{color:var(--muted);font-size:1.1rem;margin:0 0 22px}
+ul{padding-left:20px;margin:0 0 26px}
+li{margin:4px 0}
+.play{display:inline-block;background:#111;color:#fff;text-decoration:none;padding:12px 22px;border-radius:12px;font-weight:600}
+.play small{display:block;font-weight:400;font-size:.75rem;opacity:.8}
+.shot{width:100%;border-radius:24px;box-shadow:0 10px 30px rgba(60,30,120,.25)}
+footer{max-width:880px;margin:0 auto;padding:24px 16px 40px;color:var(--muted);font-size:.9rem}
+footer a{color:var(--accent)}
+@media (max-width:700px){main{grid-template-columns:1fr;gap:28px;padding-top:28px}.shot{max-width:300px;display:block;margin:0 auto}}
+</style>
+</head>
+<body>
+<main>
+ <section>
+  <img class="icon" src="icon.png" alt="Gapsy app icon">
+  <h1>Gapsy: Color Slide Puzzle</h1>
+  <p class="tag">A free, cozy sliding puzzle for Android.</p>
+  <ul>
+   <li>Slide a tile into the empty gap.</li>
+   <li>Match 3 or more of a color to clear them.</li>
+   <li>1500 levels across 15 worlds, plus daily Clear Board puzzles.</li>
+  </ul>
+  <a class="play" href="https://play.google.com/store/apps/details?id=com.meeza.colorslide"><small>GET IT ON</small>Google Play</a>
+ </section>
+ <img class="shot" src="shot.jpg" alt="Gapsy gameplay: clear the board in the daily challenge">
+</main>
+<footer>
+ Gapsy was previously called Color Slide. Made by Meeza Games.
+ <a href="https://azeemullahrg.github.io/color-slide-privacy/">Privacy policy</a>
+</footer>
+</body>
+</html>
